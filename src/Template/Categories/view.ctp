@@ -110,28 +110,35 @@
             <tr>
                 <th><?= __('Id') ?></th>
                 <th><?= __('Title') ?></th>
-                <th><?= __('Body') ?></th>
-                <th><?= __('Category Id') ?></th>
+                <th><?= __('Price') ?></th>
+                <th><?= __('Extra') ?></th>
+                <th><?= __('Category') ?></th>
+                <th><?= __('Store') ?></th>
                 <th><?= __('Created') ?></th>
-                <th><?= __('Modified') ?></th>
-                <th class="actions"><?= __('Actions') ?></th>
+                <!--<th><?= __('Modified') ?></th>
+                <th class="actions"><?= __('Actions') ?></th>-->
             </tr>
             <?php foreach ($category->products as $products): ?>
             <tr>
                 <td><?= h($products->id) ?></td>
-                <td><?= h($products->title) ?></td>
-                <td><?= h($products->body) ?></td>
+                <td><?= $this->Html->link($products->title, $products->link, array('escape' => false)) ?>
+                <br />
+                <?php echo $this->Html->image($products->image);?></td>
+                <td><?= h($products->price) ?></td>
+                <td><?= h($products->extra) ?></td>
                 <td><?= h($products->category_id) ?></td>
+                <td><?= h($products->store_id) ?></td>
                 <td><?= h($products->created) ?></td>
-                <td><?= h($products->modified) ?></td>
+                <!--<td><?= h($products->modified) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Products', 'action' => 'view', $products->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Products', 'action' => 'edit', $products->id]) ?>
                     <?= $this->Form->postLink(__('Delete'), ['controller' => 'Products', 'action' => 'delete', $products->id], ['confirm' => __('Are you sure you want to delete # {0}?', $products->id)]) ?>
-                </td>
+                </td>-->
             </tr>
             <?php endforeach; ?>
         </table>
         <?php endif; ?>
     </div>
 </div>
+

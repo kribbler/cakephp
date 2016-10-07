@@ -16,10 +16,10 @@ class ProductsController extends AppController
      *
      * @return \Cake\Network\Response|null
      */
-    public function index()
+    public function index($category_name = null)
     {
         $this->paginate = [
-            'contain' => ['Categories']
+            'contain' => ['Categories', 'Stores']
         ];
         $products = $this->paginate($this->Products);
 

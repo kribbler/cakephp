@@ -44,6 +44,11 @@ class ProductsTable extends Table
             'foreignKey' => 'category_id',
             'joinType' => 'INNER'
         ]);
+
+        $this->belongsTo('Stores', [
+            'foreignKey' => 'store_id',
+            'joinType' => 'INNER'
+        ]);
     }
 
     /**
